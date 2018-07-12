@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.88.132:8761/eureka/
+      
+server:
+  port: 8767
+  
+feign: 
+  hystrix:
+    enabled: true
+    command:
+       default:
+          execution:
+             isolation:
+                thread:
+                   timeoutInMilliseconds: 5000
+  
+spring:
+  application:
+    name: eshop-datalink-service
